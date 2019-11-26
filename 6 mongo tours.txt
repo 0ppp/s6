@@ -1,0 +1,25 @@
+>mongo
+>show dbs
+>use tours
+
+db.createCollection('turism')
+>db.turisum.insert({name:"veena word",rate:9,package:[{pname:"shillong",cost:10000},{pname:"gujart",cost:7000},{pname:"karnataka",cost:6000}]})
+
+>db.turisum.insert({name:"rohit",rate:7,package:[{pname:"shillong",cost:10000},{pname:"rujan",cost:7000}]})
+
+>db.createCollection('tour')
+
+>db.tour.insert({sourc:"john",destination:"shillong",toerisumName:"veenaword",tourisumrate:8000,expense:20000,year:2018,customer:[{cname:"mukesh",city:"pune"},{cname:"abhijeetsangita",city:"baramati"},{cname:"manisha",city:"15no"},{cname:"manasi",city:"latur"}]})
+
+>db.tour.insert({sourc:"john",destination:"karnataka",toerisumName:"veenaword",tourisumrate:80090,expense:20900,year:2017,customer:[{cname:"mukesh",city:"pune"},{cname:"abhijeetsangita",city:"baramati"},{cname:"manisha",city:"15no"},{cname:"manasi",city:"latur"}]})
+>
+db.tour.insert({sourc:"john",destination:"rajasthan",toerisumMukesh A. PatilPage 11Name:"rohit",tourisumrate:6000,expense:30400,year:2019,customer:[{cname:"mukesh",city:"pune"},{cname:"abhijeetsangita",city:"baramati"},{cname:"manisha",city:"15no"},{cname:"manasi",city:"latur"}]})
+>
+db.tour.insert({sourc:"john",destination:"taj",toerisumName:"rohit",tourisumrate:60090,expense:10400,year:2016,customer:[{cname:"mukesh",city:"pune"},{cname:"abhijeetsangita",city:"baramati"},{cname:"manisha",city:"15no"},{cname:"manasi",city:"latur"}]})
+4)
+a) >db.turisum.find({name:"veena word"}).pretty()
+b) >db.turisum.find({}).sort({"rate":-1}).limit(1)
+c) >
+db.tour.aggregate([{"$sort":{"year":1}},{"$limit":3},{$group:{
+_id:null,"count":{"$sum":"$expense"}}}])
+d) > db.tour.find({destination:"shillong"})
